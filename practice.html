@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practice Section — Basic Computer Learning</title>
+  <meta name="description" content="Practise computers by doing: keyboard key practice, a mouse click-accuracy game, and a Word formatting playground — all working, right in your browser." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Reduan Computer — home"><span class="brand-mark">R</span><span class="brand-text">Reduan <strong>Computer</strong></span></a>
+      <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="fundamentals.html">Fundamentals</a>
+        <a href="hardware-software.html">Hardware &amp; Software</a>
+        <a href="word.html">Word</a>
+        <a href="excel.html">Excel</a>
+        <a href="powerpoint.html">PowerPoint</a>
+        <a href="internet-email.html">Internet &amp; Email</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="practice.html">Practice</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container narrow reveal">
+        <p class="eyebrow">Practice Section • Learn by doing</p>
+        <h1>Practise your computer skills</h1>
+        <p class="lead">Three working exercises — no downloads, no sign-up. Everything runs right here in your browser.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow">
+        <article class="card reveal" id="keyboardPractice">
+          <p class="tag">Exercise 1 • Keyboard</p>
+          <h2>Keyboard keys practice</h2>
+          <p>Look at the letter, then press that key on your keyboard (কীবোর্ড). A new letter appears after each try.</p>
+          <div style="text-align:center;margin:1.4rem 0">
+            <span class="big-key" id="keyTarget">A</span>
+          </div>
+          <p id="keyMsg" style="text-align:center">Press the “A” key on your keyboard.</p>
+          <p style="text-align:center"><span class="stat" id="keyScore">Correct: 0 / 0</span></p>
+          <p style="text-align:center">
+            <button class="btn btn-secondary" id="newKeyBtn" type="button">Skip this key</button>
+            <button class="btn btn-secondary" id="resetKeyBtn" type="button">Reset score</button>
+          </p>
+          <p class="muted">Tip: on a phone, tap the box below and use your on-screen keyboard — or use the <a href="hardware-software.html">keyboard diagram</a> to find the keys.</p>
+        </article>
+
+        <article class="card reveal" id="mousePractice" style="margin-top:1.5rem">
+          <p class="tag">Exercise 2 • Mouse</p>
+          <h2>Mouse click accuracy game</h2>
+          <p>You have <strong>30 seconds</strong>. Click the blue circles (●) as fast as you can — each click scores 1 point. This trains your mouse control.</p>
+          <p><span class="stat" id="clickScore">Score: 0</span> <span class="stat" id="clickTime">Time left: 30s</span> <span class="stat" id="clickBest">Best: 0</span></p>
+          <div class="game-area" id="gameArea">
+            <p style="text-align:center;padding-top:120px;color:var(--muted)">Press “Start game” — the circles will appear here.</p>
+          </div>
+          <p><button class="btn" id="startClickBtn" type="button">Start game</button></p>
+        </article>
+
+        <article class="card reveal" id="formatPractice" style="margin-top:1.5rem">
+          <p class="tag">Exercise 3 • Microsoft Word</p>
+          <h2>Word formatting playground</h2>
+          <p>Select some text below (click and drag over it), then click <strong>Bold</strong>, <em>Italic</em> or <u>Underline</u> — just like in Microsoft Word. Try the size and colour too.</p>
+          <div class="toolbar">
+            <button class="tool-btn" type="button" data-fmt="bold"><strong>B</strong> Bold</button>
+            <button class="tool-btn" type="button" data-fmt="italic"><em>I</em> Italic</button>
+            <button class="tool-btn" type="button" data-fmt="underline"><u>U</u> Underline</button>
+            <label style="display:inline-flex;align-items:center;gap:0.4rem">Size
+              <select id="fmtSize" style="width:auto">
+                <option value="3">Normal</option>
+                <option value="4">Large</option>
+                <option value="5">Larger</option>
+                <option value="6">Huge</option>
+              </select>
+            </label>
+            <label style="display:inline-flex;align-items:center;gap:0.4rem">Colour
+              <select id="fmtColor" style="width:auto">
+                <option value="#0f172a">Black</option>
+                <option value="#2563eb">Blue</option>
+                <option value="#b91c1c">Red</option>
+                <option value="#15803d">Green</option>
+                <option value="#c9a227">Gold</option>
+              </select>
+            </label>
+            <button class="tool-btn" type="button" id="fmtClear">Reset text</button>
+          </div>
+          <div class="editable" id="fmtArea" contenteditable="true">Select some of this text, then try Bold, Italic or Underline. Change the size or colour too — just like in Microsoft Word.</div>
+          <p class="muted">What you practise here is exactly what the <a href="word.html">Word lessons</a> teach: select text first, then format it.</p>
+        </article>
+
+        <p style="margin-top:1.5rem"><a class="btn" href="quiz.html">Finished? Take the Quiz →</a> &nbsp; <a class="btn btn-secondary" href="index.html">Back to Home</a></p>
+        <noscript><div class="callout warn"><strong>JavaScript is off.</strong> The practice games need JavaScript to work. Please enable JavaScript in your browser and reload this page.</div></noscript>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div><h3>Reduan Computer</h3><p>Basic Computer Learning — simple, practical computer education for beginners, by Reduan Hossain.</p></div>
+        <div><h3>Learn</h3><ul><li><a href="fundamentals.html">Computer Fundamentals</a></li><li><a href="hardware-software.html">Hardware &amp; Software</a></li><li><a href="word.html">Microsoft Word</a></li><li><a href="excel.html">Microsoft Excel</a></li><li><a href="powerpoint.html">Microsoft PowerPoint</a></li><li><a href="internet-email.html">Internet &amp; Email</a></li><li><a href="quiz.html">Quiz</a></li><li><a href="practice.html">Practice</a></li></ul></div>
+        <div><h3>Contact</h3><p>Email: <a href="mailto:reduan.digital@gmail.com">reduan.digital@gmail.com</a><br />Facebook: <a href="https://www.facebook.com/reduancomputer" target="_blank" rel="noopener">facebook.com/reduancomputer</a><br />Reduan Hossain — Digital Marketer &amp; Computer Educator</p></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Reduan Computer — Reduan Hossain. Basic Computer Learning. All rights reserved.</p></div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

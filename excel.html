@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Microsoft Excel Lessons — Basic Computer Learning</title>
+  <meta name="description" content="Learn Microsoft Excel step by step: cells, rows and columns, SUM, AVERAGE and COUNT formulas, charts — with a live mini spreadsheet demo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Reduan Computer — home"><span class="brand-mark">R</span><span class="brand-text">Reduan <strong>Computer</strong></span></a>
+      <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="fundamentals.html">Fundamentals</a>
+        <a href="hardware-software.html">Hardware &amp; Software</a>
+        <a href="word.html">Word</a>
+        <a href="excel.html">Excel</a>
+        <a href="powerpoint.html">PowerPoint</a>
+        <a href="internet-email.html">Internet &amp; Email</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="practice.html">Practice</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container narrow reveal">
+        <p class="eyebrow">Lesson 4 • Microsoft Excel</p>
+        <h1>Microsoft Excel Lessons</h1>
+        <p class="lead">Excel is for numbers — marks, expenses, lists and accounts. Type numbers into cells, and let formulas do the maths for you.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container narrow reveal">
+        <h2>Cells, rows and columns</h2>
+        <p>An Excel file is a <strong>workbook</strong>. Each workbook has <strong>worksheets</strong> (the tabs at the bottom). A worksheet is a grid:</p>
+        <ul>
+          <li><strong>Column:</strong> a vertical line of cells, named by a letter — A, B, C…</li>
+          <li><strong>Row:</strong> a horizontal line of cells, named by a number — 1, 2, 3…</li>
+          <li><strong>Cell:</strong> one box where a row and a column meet. Its name is its column + row — e.g. <code>B3</code>.</li>
+        </ul>
+        <div class="diagram">
+          <h4>A tiny worksheet (labelled)</h4>
+          <table>
+            <tr><th></th><th>A</th><th>B</th></tr>
+            <tr><th>1</th><td>Item</td><td>Price</td></tr>
+            <tr><th>2</th><td>Pen</td><td>20</td></tr>
+            <tr><th>3</th><td>Book</td><td>150</td></tr>
+          </table>
+          <p class="muted" style="text-align:center">Cell <code>B2</code> holds 20. Cell <code>B3</code> holds 150.</p>
+        </div>
+
+        <h2>Try it now — live mini spreadsheet</h2>
+        <p>Type your own numbers in the boxes below. The SUM, AVERAGE and COUNT update live — exactly like real Excel.</p>
+        <div class="card">
+          <table id="miniSheet">
+            <tr><th>Item</th><th>Amount</th></tr>
+            <tr><td>Item 1</td><td><input type="number" value="120" aria-label="Item 1 amount" /></td></tr>
+            <tr><td>Item 2</td><td><input type="number" value="85" aria-label="Item 2 amount" /></td></tr>
+            <tr><td>Item 3</td><td><input type="number" value="200" aria-label="Item 3 amount" /></td></tr>
+            <tr><td>Item 4</td><td><input type="number" value="45" aria-label="Item 4 amount" /></td></tr>
+            <tr><td>Item 5</td><td><input type="number" value="150" aria-label="Item 5 amount" /></td></tr>
+          </table>
+          <p><span class="stat">SUM = <b id="sheetSum">0</b></span>
+          <span class="stat">AVERAGE = <b id="sheetAvg">0</b></span>
+          <span class="stat">COUNT = <b id="sheetCount">0</b></span>
+          <span class="stat">MAX = <b id="sheetMax">—</b></span></p>
+          <p class="muted">In real Excel these would be: <code>=SUM(B2:B6)</code>, <code>=AVERAGE(B2:B6)</code>, <code>=COUNT(B2:B6)</code>, <code>=MAX(B2:B6)</code></p>
+        </div>
+
+        <h2>5 step-by-step lessons</h2>
+        <article class="card lesson reveal">
+          <p class="step">Lesson 1 — Open Excel and type your first numbers</p>
+          <ol>
+            <li>Open Excel and click <strong>Blank workbook</strong>.</li>
+            <li>Click cell <code>A1</code> and type <em>Item</em>. Press <kbd>Tab</kbd> to move to <code>B1</code>.</li>
+            <li>In <code>B1</code> type <em>Price</em>. Press <kbd>Enter</kbd> to move down.</li>
+            <li>Fill in 3 items and their prices below.</li>
+            <li>Save with <kbd>Ctrl</kbd> + <kbd>S</kbd>.</li>
+          </ol>
+        </article>
+        <article class="card lesson reveal">
+          <p class="step">Lesson 2 — Your first formula: SUM</p>
+          <ol>
+            <li>Click the empty cell below your prices.</li>
+            <li>Type <code>=SUM(B2:B4)</code> — change B2:B4 to match your own rows.</li>
+            <li>Press <kbd>Enter</kbd>. Excel adds the numbers for you.</li>
+            <li>Change one price — the total updates by itself. That is the power of formulas.</li>
+            <li>Every formula starts with <code>=</code>.</li>
+          </ol>
+        </article>
+        <article class="card lesson reveal">
+          <p class="step">Lesson 3 — AVERAGE and COUNT</p>
+          <ol>
+            <li><code>=AVERAGE(B2:B4)</code> finds the average (total ÷ how many).</li>
+            <li><code>=COUNT(B2:B4)</code> counts how many cells have numbers.</li>
+            <li><code>=MAX(B2:B4)</code> finds the biggest number; <code>=MIN(B2:B4)</code> the smallest.</li>
+            <li>Try them in the mini spreadsheet above first, then in real Excel.</li>
+          </ol>
+        </article>
+        <article class="card lesson reveal">
+          <p class="step">Lesson 4 — Format numbers and cells</p>
+          <ol>
+            <li>Select the price cells.</li>
+            <li>On the <em>Home</em> tab, make the heading row <strong>bold</strong>.</li>
+            <li>Use the number format to show prices with 2 decimal places, e.g. 150.00.</li>
+            <li>Change a column width by dragging the line between two column letters.</li>
+            <li>Save with <kbd>Ctrl</kbd> + <kbd>S</kbd>.</li>
+          </ol>
+        </article>
+        <article class="card lesson reveal">
+          <p class="step">Lesson 5 — Make a simple chart</p>
+          <ol>
+            <li>Select your items and prices (including the headings).</li>
+            <li>Click the <em>Insert</em> tab, then <strong>Column Chart</strong>.</li>
+            <li>Excel draws a chart from your numbers — taller bar, bigger number.</li>
+            <li>Click the chart title and type a clear title, e.g. <em>My Expenses</em>.</li>
+            <li>Change a price — the chart changes too.</li>
+          </ol>
+        </article>
+
+        <h2>Excel formulas — quick reference</h2>
+        <table>
+          <tr><th>Formula</th><th>What it does</th><th>Example</th></tr>
+          <tr><td><code>=SUM(A1:A5)</code></td><td>Adds the numbers</td><td>10 + 20 + 30 = 60</td></tr>
+          <tr><td><code>=AVERAGE(A1:A5)</code></td><td>Finds the average</td><td>Average of 10, 20, 30 = 20</td></tr>
+          <tr><td><code>=COUNT(A1:A5)</code></td><td>Counts cells with numbers</td><td>5 numbers → 5</td></tr>
+          <tr><td><code>=MAX(A1:A5)</code></td><td>Biggest number</td><td>Max of 10, 20, 30 = 30</td></tr>
+          <tr><td><code>=MIN(A1:A5)</code></td><td>Smallest number</td><td>Min of 10, 20, 30 = 10</td></tr>
+          <tr><td><code>=A1+B1</code></td><td>Adds two cells</td><td>Simple maths, cell by cell</td></tr>
+        </table>
+        <p><a class="btn" href="powerpoint.html">Next: Microsoft PowerPoint →</a> &nbsp; <a class="btn btn-secondary" href="word.html">← Back: Microsoft Word</a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div><h3>Reduan Computer</h3><p>Basic Computer Learning — simple, practical computer education for beginners, by Reduan Hossain.</p></div>
+        <div><h3>Learn</h3><ul><li><a href="fundamentals.html">Computer Fundamentals</a></li><li><a href="hardware-software.html">Hardware &amp; Software</a></li><li><a href="word.html">Microsoft Word</a></li><li><a href="excel.html">Microsoft Excel</a></li><li><a href="powerpoint.html">Microsoft PowerPoint</a></li><li><a href="internet-email.html">Internet &amp; Email</a></li><li><a href="quiz.html">Quiz</a></li><li><a href="practice.html">Practice</a></li></ul></div>
+        <div><h3>Contact</h3><p>Email: <a href="mailto:reduan.digital@gmail.com">reduan.digital@gmail.com</a><br />Facebook: <a href="https://www.facebook.com/reduancomputer" target="_blank" rel="noopener">facebook.com/reduancomputer</a><br />Reduan Hossain — Digital Marketer &amp; Computer Educator</p></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Reduan Computer — Reduan Hossain. Basic Computer Learning. All rights reserved.</p></div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
